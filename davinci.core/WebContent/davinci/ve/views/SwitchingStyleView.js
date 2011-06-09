@@ -10,6 +10,10 @@ dojo.require("davinci.ve.widgets.Background");
 dojo.require('davinci.ve.widgets.Border');
 dojo.require("davinci.ve.widgets.Cascade");
 
+dojo.require("dojo.i18n");  
+dojo.requireLocalization("davinci.ve", "veLang");  
+var langObj = dojo.i18n.getLocalization("davinci.ve", "veLang");
+
 dojo.declare("davinci.ve.views.SwitchingStyleView", davinci.workbench.ViewLite, {
 
 	_paddingMenu:['', '0px', '1em'],
@@ -19,7 +23,7 @@ dojo.declare("davinci.ve.views.SwitchingStyleView", davinci.workbench.ViewLite, 
 	          
 	        
 	         
-	          {title:"Common", 
+	          {title:langObj.common, 
 	        	  pageTemplate:{html: "<div dojoType='davinci.ve.widgets.CommonProperties'></div>"}},
 	          {title:"Widget-specific",
 	        	  html: "<div dojoType='davinci.ve.widgets.WidgetProperties'></div>"},  
